@@ -14,8 +14,7 @@ body{
   background-color: #EBE3CB;
   text-align: center;
 }
-/*why does the img take so long to load?
-*/
+
 #homepage{
   background-image: url("../img/home-header.jpg");
   height: 750px;
@@ -24,15 +23,7 @@ body{
   max-width: 100%;
   padding-bottom: 10px;
 }
-#about-title{
-  background-image: url("../img/hard-hats.jpg");
-  height: 750px;
-  background-size: cover;
-  background-position: right;
-  max-width: 100%;
-  padding-bottom: 10px;
-  color: white;
-}
+
 
 h1{
   font-family: 'Alike Angular', serif;
@@ -44,15 +35,49 @@ h1{
   display: inline-block;
 }
 
-nav a{
-display: none;
+
+#favicon{
+  color: inherit;
+  text-align: center;
+  font-size: 25px;
+  padding: 10px;
+  float: right;
 }
 
-i{
-  text-align: right;
-  font-size: 30px;
+#favicon:hover{
+  color: #F26101;
 }
 
+nav #favicon {
+    position: absolute;
+    top: 0;
+    right: 10px;}
+
+nav {
+  list-style: none;
+  text-align: left;
+  font-size: 25px;
+  text-transform: uppercase;
+  background-color: rgba(255, 255, 255, .8);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  z-index: 200;
+  transform: translateX(-100%);
+  transition: all .3s ease;
+}
+.overlay{
+  transform: translateX(0);
+}
+/*.close{
+transform: translateX(-100%);
+transition: all .3s ease;
+}*/
+
+nav li {
+  padding: 10px;
+}
 
 button{
   border: 1px solid #393B31;
@@ -69,7 +94,20 @@ button:hover{
   color: white;
 }
 
-section{
+a{
+  text-decoration: none;
+  color: #393B31;
+  transition: all .2s ease-in-out;
+}
+a:hover{
+  color: #F26101;
+}
+
+section p{
+  font-family: 'Open Sans', sans-serif;
+}
+
+.blurb-1, .blurb-2{
   height: 500px;
   font-size: 30px;
   padding-left: 80px;
@@ -81,18 +119,14 @@ section{
   background-image: url("../img/flat.jpg");
   background-repeat: repeat;
   background-position: center;
-  /*  -webkit-filter: blur(2px);
-  how do i just blue the bacground image?
-  do i make this a JS thing maybe?*/
   height: 650px;
   max-width: 150%;
-  padding-top: 50px;
+  padding-top: 150px;
 }
 #gem-show a{
   text-transform: uppercase;
   font-size: 50px;
   color: white;
-  /*how do i move this away fromt the image's top?*/
   transition: all .5s ease-in-out;
 }
 #gem-show p{
@@ -107,64 +141,120 @@ section{
 can i make it so when you hover over everything in the image
 the image lightens and the words turn color and the
 whole thing is an anchor?*/
-
-/*#rick{
+#meeting-topic{
   background-image: url("../img/hiking.jpg");
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-position: center;
   height: 650px;
+  max-width: 150%;
+  padding-top: 150px;
 }
-#rick p{
-  font-size: 30px;
-  color: white;
-}
-#rick a{
-  font-size: 30px;
-  color: white;
-  transition: all .2s ease-in-out;
-}
-#rick a:hover{
-  color: #F26101;
-}*/
 
-a{
-  text-decoration: none;
-  color: #393B31;
-  transition: all .2s ease-in-out;
+#meeting-topic p{
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  text-align: left;
+  padding-top: 50px;
 }
-a:hover{
-  color: #F26101;
-}
-/* Fix for responsive images */
+
+
 
 img {
   max-width: 100%;
 }
-#favicon{
-  color: inherit;
-  text-align: center;
-  font-size: 25px;
-  padding: 20px;
-  float: right;
-}
+/*burger menu*/
 
-#favicon:hover{
-  color: #F26101;
-}
-
-.blurb-1 {
+.blurb-1, .blurb-2{
  transform: translateY(30%);
   opacity: 0;
   transition: all .5s ease-in-out;
 }
 
-.blurb-2 {
- transform: translateY(30%);
-  opacity: 0;
-  transition: all .5s ease-in-out;
-}
 .float-up {
    transform: translateX(0);
    opacity: 1;
    transition: all .5s ease-in-out;
  }
+/*ABOUT PAGE*/
+
+#about-title{
+  background-image: url("../img/hard-hats.jpg");
+  height: 750px;
+  background-size: cover;
+  background-position: right;
+  max-width: 100%;
+  padding-bottom: 10px;
+  color: white;
+}
+#about-wrapper{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-content: flex-start;
+  align-items: baseline;
+  padding-bottom: 180px;
+  padding-top: 60px;
+}
+
+article{
+  font-size: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 50px;
+}
+
+article p{
+  font-size: 25px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 20px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+aside {
+	width: 26%;
+	text-align: left;
+}
+
+aside ul{
+  margin: 7px;
+}
+
+aside p{
+  padding-left: 47px;
+  text-decoration: underline;
+  font-size: 16px;
+}
+/*Affiliation Area*/
+
+#associations-grid{
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding-top: 30px;
+  padding-bottom: 180px;
+}
+.associations-columns{
+  width: 30%;
+  display: block;
+  font-size: 16px;
+  margin: 5px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.associations-columns h3{
+    font-family: 'Alike Angular', serif;
+    padding-bottom: 20px;
+    font-size: 20px;
+}
+/*contact section*/
+#contact{
+  background-image: url("../img/water-rocks.jpg");
+  background-size: cover;
+  background-position: right;
+  color: white;
+  font-size: 60px;
+  height: 500px;
+  max-width: 150%;
+  padding-top: 250px;
+}
